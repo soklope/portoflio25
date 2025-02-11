@@ -1,4 +1,4 @@
-@use './style/utilities/css-reset.scss';
-@use './style/global/body.scss';
-@use './style/utilities/page-container.scss';
-@use './style/variables/fonts.scss' as f;
+@use './style/global/all' as *;
+@use './style/utilities/all' as *;
+@use './style/variables/all' as *;
+@use './style/mixins/all' as *;
