@@ -1,0 +1,17 @@
+@use './../variables/breakpoints.scss' as b;
+
+.page-container {
+    display: flex;
+    width: 90%;
+    margin: auto;
+  
+    @media (min-width: b.$tablet) {
+    }
+  
+    @media (min-width: b.$laptop) {
+    }
+  
+    @media (min-width: b.$desktop) {
+        max-width: 1300px;
+    }
+  }
