@@ -1,10 +1,16 @@
 @use './../variables/colors.scss' as c;
 
 body {
+    position: relative;
     color: c.$white;
     background: linear-gradient(135deg, 
     c.$green-grey 10%,
     c.$medium-grey 30%,
     c.$dark-grey 100% 
   );
+
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

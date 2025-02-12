@@ -1,0 +1,56 @@
+@use '../../style/variables/colors.scss' as c;
+@use '../../style/variables/fonts.scss' as f;
+@use '../../style/mixins/breakpoints' as *;
+
+.navigation {
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        padding: 80px 32px;
+        justify-content: end;
+        align-items: end;
+        gap: 24px;
+
+        @include break(tablet) {
+            gap: 32px;
+        }
+
+        @include break(laptop) {
+            gap: 40px;
+        }
+
+        @include break(desktop) {
+            gap: 40px;
+        }
+
+        a {
+            color: c.$green;
+            font-family: f.$primary-font;
+            font-size: f.$navigation-text-mobile;
+            line-height: 0.8;
+
+            @include break(tablet) {
+                font-size: f.$navigation-text-tablet;
+            }
+    
+            @include break(laptop) {
+                font-size: f.$navigation-text-laptop;
+            }
+    
+            @include break(desktop) {
+                font-size: f.$navigation-text-desktop;
+            }
+
+            &:hover {
+                cursor: pointer;
+                color: c.$white;
+            }
+        }
+    }
+}

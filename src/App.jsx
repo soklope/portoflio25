@@ -1,16 +1,33 @@
 import './index.scss'
 import Greeting from './components/Greeting/Greeting'
-import useToggleStore from './store/navigationStore'
+import MyProjects from './components/MyProjects/MyProjects';
+import Contact from './components/Contact/Contact';
+import AboutMe from './components/AboutMe/AboutMe';
+import Navigation from './components/Navigation/Navigation';
+import BurgerMenu from './components/BurgerMenu/BurgerMenu';
+import useNavigationStore from './store/navigationStore'
 
 export default function App() {
-  const { isOn } = useToggleStore();
+  const { hasClickedOnGreeting, isMenuOpen } = useNavigationStore();
 
   return (
     <>
-      { isOn ? 
-        <Greeting /> 
+      { hasClickedOnGreeting ? 
+        <>
+          {
+            isMenuOpen ?
+              <Navigation />
+            :
+              <>
+                <AboutMe/> 
+                <MyProjects/> 
+                <Contact/> 
+              </>
+          }
+          <BurgerMenu />
+        </>
         : 
-        <div>clicked</div>
+        <Greeting /> 
       }
     </>
   )

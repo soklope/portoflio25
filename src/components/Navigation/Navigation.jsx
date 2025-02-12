@@ -1,0 +1,22 @@
+import './navigation.scss'
+import { useState } from 'react'
+import useNavigationStore from '../../store/navigationStore'
+import { Fade } from "react-awesome-reveal";
+
+export default function Navigation() {
+    const { isMenuOpen, setActiveSection } = useNavigationStore()
+
+    return (
+        <Fade duration={250}>
+            <div className='navigation'>
+                { isMenuOpen &&
+                    <div className='navigation__menu'>
+                        <a onClick={() => setActiveSection('about')}>About me</a>
+                        <a onClick={() => setActiveSection('projects')}>Projects</a>
+                        <a onClick={() => setActiveSection('contact')}>Contact</a>
+                    </div>
+                }
+            </div>
+        </Fade>
+    )
+}
