@@ -1,0 +1,48 @@
+@use '../../style/variables/colors' as c;
+@use '../../style/variables/fonts' as f;
+@use '../../style/mixins/breakpoints' as *;
+
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    color: c.$white;
+    height: 100vh;
+
+    &__meta {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: f.$secondary-font;
+        text-align: center;
+        font-size: f.$contact-text-mobile;
+        height: calc(100% - 104px);
+        width: 100%;
+
+        @include break(laptop) {
+            font-size: f.$contact-text-laptop;
+        }
+
+        &--mail {
+            font-weight: 100;
+            width: fit-content;
+
+            &:hover {
+                cursor: pointer;
+                color: c.$green;
+            }
+        }
+
+        &--linkedin {
+            font-weight: bold;
+            width: fit-content;
+            
+            &:hover {
+                cursor: pointer;
+                color: c.$green;
+            }
+        }
+    }
+}
+
