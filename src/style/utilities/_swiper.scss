@@ -27,9 +27,8 @@
 .swiper-slide {
     background-color: c.$dark-grey;
     color: c.$white;
-    padding: 16px;
+    // padding: 16px;
     // height: calc(100% - 8px) !important;
-
 }
 
 .swiper-button-prev {
@@ -58,14 +57,6 @@
         right: 16px !important;
 
         &::after {
-            // height: 32px !important;
-            // width: 32px !important;
-            // background-image: url('../../assets/icons/arrow.svg') !important;
-            // background-repeat: no-repeat !important;
-            // background-position: center !important;
-
-            // content: unset !important;
-            // font-family: unset !important;
             font-size: 32px !important;
         }
     }

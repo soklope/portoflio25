@@ -1,0 +1,44 @@
+@use '../../style/variables/colors.scss' as c;
+@use '../../style/variables/fonts.scss' as f;
+@use '../../style/mixins/breakpoints' as *;
+
+.project-slide {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    font-family: f.$secondary-font;
+
+    &__description {
+        margin: auto 0 24px auto;
+        max-width: 200px;
+        text-align: right;
+        font-weight: lighter;
+    }
+
+    &__link {
+        text-align: right;
+        text-transform: uppercase;
+        font-weight: bold;
+        margin-left: auto;
+        width: fit-content;
+
+        &:hover {
+            color: c.$green;
+        }
+    }
+
+    &__logo {
+        
+        &--visibuilt {
+            background-color: blueviolet;
+            display: block;
+            height: 100%;
+            max-height: 40px;
+            background-image: url('../../assets/icons/visibuilt.svg');
+            background-repeat: no-repeat;
+            background-position: left;
+            background-size: contain;
+        }
+    }
+}

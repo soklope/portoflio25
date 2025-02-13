@@ -2,9 +2,8 @@ import './my-projects.scss'
 import useNavigationStore from '../../store/navigationStore';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import ProjectSlide from '../ProjectSlide/ProjectSlide';
 
-import visibuilt from '../../assets/icons/visibuilt.svg'
-import morgenfest from '../../assets/icons/morgenfest.svg'
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -28,11 +27,13 @@ export default function MyProjects() {
                     onSlideChange={() => console.log('slide change')}
                     >
                     <SwiperSlide>
-                        <img src={visibuilt} alt="" />
-                    </SwiperSlide>
+                        <ProjectSlide 
+                            description={'With experience in HTML, CSS, JavaScript, and frameworks like React and Next.js, I love turning ideas into functional and visually appealing digital experiences.'}
+                            logo={'visibuilt'}
+                            websiteName={'visibuilt.com'}
+                            linkUrl={'https://visibuilt.com/'}
 
-                    <SwiperSlide>
-                        <img src={morgenfest} alt="" />
+                        />
                     </SwiperSlide>
                 </Swiper>
             </div>
