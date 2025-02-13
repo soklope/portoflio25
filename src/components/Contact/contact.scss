@@ -26,7 +26,6 @@
         }
     
         @include break(laptop) {
-            font-size: f.$contact-text-laptop;
             height: calc(100vh - 282px);
         }
     
