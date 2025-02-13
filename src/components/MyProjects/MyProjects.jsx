@@ -6,8 +6,8 @@ export default function MyProjects() {
 
     return (
         showProjects && (
-            <div className="greeting-container">
-                <h2>My Projects</h2>
+            <div className="page-container">
+                <h2 className='util-title'>Projects</h2>
             </div>
         )
     )

@@ -1,6 +1,8 @@
 import { create } from 'zustand';
 
 const useNavigationStore = create((set) => ({
+  fadeDuration: 250,
+
   hasClickedOnGreeting: false,
   clickGreeting: () => set((state) => ({ hasClickedOnGreeting: !state.hasClickedOnGreeting })),  
 

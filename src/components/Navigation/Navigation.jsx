@@ -4,10 +4,10 @@ import useNavigationStore from '../../store/navigationStore'
 import { Fade } from "react-awesome-reveal";
 
 export default function Navigation() {
-    const { isMenuOpen, setActiveSection } = useNavigationStore()
+    const { isMenuOpen, setActiveSection, fadeDuration } = useNavigationStore()
 
     return (
-        <Fade duration={250}>
+        <Fade duration={fadeDuration}>
             <div className='navigation'>
                 { isMenuOpen &&
                     <div className='navigation__menu'>

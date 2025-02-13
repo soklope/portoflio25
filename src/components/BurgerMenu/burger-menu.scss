@@ -1,15 +1,32 @@
+@use '../../style/variables/colors' as c;
+@use '../../style/mixins/breakpoints' as *;
+
 .burger-menu {
     position: fixed;
-    right: 22px;
-    bottom: 22px;
-    color: white;
+    right: 16px;
+    bottom: 16px;
 
     .hamburger-react {
         &:hover {
             div {
                 transition: 0s !important;
-                background-color: white !important;
+                background-color: c.$white !important;
             }
         }
+    }
+
+    @include break(tablet) {
+        right: 32px;
+        bottom: 32px;
+    }
+
+    @include break(laptop) {
+        right: 40px;
+        bottom: 40px;
+    }
+
+    @include break(desktop) {
+        right: 48px;
+        bottom: 48px;
     }
 }

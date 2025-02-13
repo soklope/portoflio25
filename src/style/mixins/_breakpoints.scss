@@ -1,10 +1,10 @@
 @mixin break($size, $max: null) {
   @if $size == "tablet" {
-    $size: 800px;
+    $size: 767px;
   } @else if $size == "laptop" {
     $size: 1088px;
   } @else if $size == "desktop" {
-    $size: 1536px;
+    $size: 1537px;
   }
 
   @if $max != null {

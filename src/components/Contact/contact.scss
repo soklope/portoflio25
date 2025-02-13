@@ -17,11 +17,21 @@
         font-family: f.$secondary-font;
         text-align: center;
         font-size: f.$contact-text-mobile;
-        height: calc(100% - 104px);
         width: 100%;
+        background-color: c.$dark-grey;
+        height: calc(100vh - 144px);
 
+        @include break(tablet) {
+            height: calc(100vh - 224px);
+        }
+    
         @include break(laptop) {
             font-size: f.$contact-text-laptop;
+            height: calc(100vh - 282px);
+        }
+    
+        @include break(desktop) {
+            height: calc(100vh - 328px);
         }
 
         &--mail {
