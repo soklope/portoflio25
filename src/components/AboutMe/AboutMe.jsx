@@ -20,10 +20,24 @@ export default function AboutMe() {
 
                         <h3 className='util-sub-title'>Tech stack <span className='slash--white'>/</span> skills</h3>
                         <ul className='about-me__skill-list util-text'>
-                            <li>React JS</li>
+                            <li>React JS / TS</li>
                             <li>NODE JS</li>
-                            <li>CSS - SCSS</li>
+                            <li>CSS / SCSS</li>
+                            <li>PHP</li>
+                            <li>Git</li>
                             <li>HTML 5</li>
+                            <li>WordPress</li>
+                        </ul>
+
+                        <h3 className='util-sub-title'>Familiar With</h3>
+                        <ul className='about-me__skill-list util-text'>
+                            <li>Figma</li>
+                            <li>Firebase</li>
+                            <li>Firestore</li>
+                            <li>SQL</li>
+                            <li>Postman</li>
+                            <li>Adobe Illustrator</li>
+                            <li>Adobe InDesign</li>
                         </ul>
                     </div>
                 </div>

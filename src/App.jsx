@@ -4,7 +4,7 @@ import MyProjects from './components/MyProjects/MyProjects';
 import Contact from './components/Contact/Contact';
 import AboutMe from './components/AboutMe/AboutMe';
 import Navigation from './components/Navigation/Navigation';
-import BurgerMenu from './components/BurgerMenu/BurgerMenu';
+import Footer from './components/Footer/Footer';
 import useNavigationStore from './store/navigationStore'
 
 export default function App() {
@@ -24,7 +24,7 @@ export default function App() {
                 <Contact/> 
               </>
           }
-          <BurgerMenu />
+          <Footer />
         </>
         : 
         <Greeting /> 

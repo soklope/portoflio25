@@ -16,7 +16,7 @@ export default function MyProjects() {
     return (
         showProjects && (
             <Fade duration={fadeDuration}>
-                <div className="page-container my-projects">
+                <div className="my-projects">
                     <Swiper
                         modules={[Navigation, Pagination, Scrollbar, A11y]}
                         spaceBetween={0}

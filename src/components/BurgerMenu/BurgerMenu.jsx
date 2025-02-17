@@ -1,5 +1,4 @@
 import './burger-menu.scss'
-import { useState } from 'react'
 import useNavigationStore from '../../store/navigationStore'
 import { Rotate as Hamburger } from 'hamburger-react'
 

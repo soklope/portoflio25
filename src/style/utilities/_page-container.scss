@@ -1,8 +1,7 @@
 @use '../../style/mixins/breakpoints' as *;
 
 .page-container {
-    display: flex;
-    margin: auto;
+    padding: 16px;
 
     @include break(tablet) {
     }

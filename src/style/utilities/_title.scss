@@ -6,10 +6,7 @@
     color: c.$green;
     font-family: f.$primary-font;
     font-size: f.$title-mobile;
-    top: 16px;
-    left: 24px;
-    position: absolute;
-    z-index: 10;
+    margin-right: auto;
 
     &::after {
         content: '.';
@@ -39,7 +36,7 @@
     color: c.$green;
     font-family: f.$primary-font;
     font-size: f.$sub-title-mobile;
-    margin-bottom: 16px;
+    margin-bottom: 8px;
 
     &::after {
         content: '.';

@@ -8,6 +8,7 @@
     flex-direction: column;
     color: c.$white;
     height: 100vh;
+    justify-content: center;
 
     &__meta {
         display: flex;
@@ -18,19 +19,7 @@
         text-align: center;
         font-size: f.$contact-text-mobile;
         width: 100%;
-        height: calc(100vh - 144px);
-
-        @include break(tablet) {
-            height: calc(100vh - 224px);
-        }
-    
-        @include break(laptop) {
-            height: calc(100vh - 282px);
-        }
-    
-        @include break(desktop) {
-            height: calc(100vh - 328px);
-        }
+        margin: auto;
 
         &--mail {
             font-weight: 100;
