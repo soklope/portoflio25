@@ -6,7 +6,10 @@
     color: c.$green;
     font-family: f.$primary-font;
     font-size: f.$title-mobile;
-    margin-bottom: 16px;
+    top: 16px;
+    left: 24px;
+    position: absolute;
+    z-index: 10;
 
     &::after {
         content: '.';
@@ -15,14 +18,20 @@
 
     @include break(tablet) {
         font-size: f.$title-tablet;
+        top: 40px;
+        left: 40px;
     }
 
     @include break(laptop) {
         font-size: f.$title-laptop;
+        top: 48px;
+        left: 48px;
     }
 
     @include break(desktop) {
         font-size: f.$title-desktop;
+        top: 56px;
+        left: 56px;
     }
 }
 

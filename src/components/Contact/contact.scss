@@ -18,7 +18,6 @@
         text-align: center;
         font-size: f.$contact-text-mobile;
         width: 100%;
-        background-color: c.$dark-grey;
         height: calc(100vh - 144px);
 
         @include break(tablet) {

@@ -10,24 +10,18 @@
         color: c.$white;
         font-family: f.$secondary-font;
         font-weight: lighter;
-
-        background-color: c.$dark-grey;
         height: calc(100vh - 144px);
-        padding: 16px;
 
         @include break(tablet) {
             height: calc(100vh - 224px);
-            padding: 24px;
         }
     
         @include break(laptop) {
             height: calc(100vh - 282px);
-            padding: 32px;
         }
     
         @include break(desktop) {
             height: calc(100vh - 328px);
-            padding: 40px;
         }
 
         p {

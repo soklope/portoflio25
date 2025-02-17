@@ -5,18 +5,15 @@
 .swiper {
     margin: 0;
     width: 100%;
-    height: calc(100vh - 144px);
+    height: 100vh;    
     
     @include break(tablet) {
-        height: calc(100vh - 224px);
     }
 
     @include break(laptop) {
-        height: calc(100vh - 282px);
     }
 
     @include break(desktop) {
-        height: calc(100vh - 328px);
     }
 }
 
@@ -27,8 +24,6 @@
 .swiper-slide {
     background-color: c.$dark-grey;
     color: c.$white;
-    // padding: 16px;
-    // height: calc(100% - 8px) !important;
 }
 
 .swiper-button-prev {
@@ -37,12 +32,24 @@
     @include break(laptop) {
         display: flex !important;
         color: c.$white !important;
-        top: 32px !important;
+        top: 104px !important;
         left: unset !important;
-        right: 40px !important;
+        right: 80px !important;
 
         &::after {
             font-size: 32px !important;
+        }
+    }
+
+    @include break(desktop) {
+        display: flex !important;
+        color: c.$white !important;
+        top: 120px !important;
+        left: unset !important;
+        right: 96px !important;
+
+        &::after {
+            font-size: 40px !important;
         }
     }
 }
@@ -53,11 +60,22 @@
     @include break(laptop) {
         display: flex !important;
         color: c.$white !important;
-        top: 32px !important;
-        right: 16px !important;
+        top: 104px !important;
+        right: 40px !important;
 
         &::after {
             font-size: 32px !important;
+        }
+    }
+
+    @include break(desktop) {
+        display: flex !important;
+        color: c.$white !important;
+        top: 120px !important;
+        right: 48px !important;
+
+        &::after {
+            font-size: 40px !important;
         }
     }
 }

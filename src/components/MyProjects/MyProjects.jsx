@@ -3,7 +3,7 @@ import useNavigationStore from '../../store/navigationStore';
 import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import ProjectSlide from '../ProjectSlide/ProjectSlide';
-
+import { Fade } from 'react-awesome-reveal';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -11,32 +11,43 @@ import 'swiper/css/scrollbar';
 import 'swiper/css/pagination';
 
 export default function MyProjects() {
-    const { showProjects } = useNavigationStore();
+    const { showProjects, fadeDuration } = useNavigationStore();
 
     return (
         showProjects && (
-            <div className="page-container my-projects">
-                <h2 className='util-title'>Projects</h2>
-                <Swiper
-                    modules={[Navigation, Pagination, Scrollbar, A11y]}
-                    spaceBetween={0}
-                    slidesPerView={1}
-                    navigation
-                    scrollbar={{ draggable: true }}
-                    onSwiper={(swiper) => console.log(swiper)}
-                    onSlideChange={() => console.log('slide change')}
-                    >
-                    <SwiperSlide>
-                        <ProjectSlide 
-                            description={'With experience in HTML, CSS, JavaScript, and frameworks like React and Next.js, I love turning ideas into functional and visually appealing digital experiences.'}
-                            logo={'visibuilt'}
-                            websiteName={'visibuilt.com'}
-                            linkUrl={'https://visibuilt.com/'}
+            <Fade duration={fadeDuration}>
+                <div className="page-container my-projects">
+                    <Swiper
+                        modules={[Navigation, Pagination, Scrollbar, A11y]}
+                        spaceBetween={0}
+                        slidesPerView={1}
+                        navigation
+                        scrollbar={{ draggable: true }}
+                        onSwiper={(swiper) => console.log(swiper)}
+                        onSlideChange={() => console.log('slide change')}
+                        >
+                        <SwiperSlide>
+                            <ProjectSlide 
+                                description={'Visibuilt is a biotech startup based in Copenhagen, Denmark, focused on developing a sustainable alternative to bitumen for asphalt production. To support their mission, I designed and built a fully custom React website, seamlessly integrated with Firebase Hosting and Firestore. This setup ensures a dynamic and scalable platform, with a dedicated news article page that allows for easy content management and real-time updates.'}
+                                projectName={'visibuilt'}
+                                websiteName={'visibuilt.com'}
+                                linkUrl={'https://visibuilt.com/'}
 
-                        />
-                    </SwiperSlide>
-                </Swiper>
-            </div>
+                            />
+                        </SwiperSlide>
+
+                        <SwiperSlide>
+                            <ProjectSlide 
+                                description={'Morgenfest is a key digital hub for events organized by Morningtrain, Morningbound, and Mornings—three of Denmark’s most innovative digital agencies. As part of my internship at Morningtrain ApS, I developed Morgenfest as a custom WordPress theme, ensuring a highly maintainable and user-friendly experience. The project was built based on a Figma UI design from a dedicated designer and developed in close collaboration with backend intern Kasper Ptak, ensuring a seamless integration of frontend and backend functionalities.'}
+                                projectName={'morgenfest'}
+                                websiteName={'morgenfest.dk'}
+                                linkUrl={'https://morgenfest.dk/'}
+
+                            />
+                        </SwiperSlide>
+                    </Swiper>
+                </div>
+            </Fade>
         )
     )
 }

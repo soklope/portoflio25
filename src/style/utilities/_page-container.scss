@@ -3,17 +3,13 @@
 .page-container {
     display: flex;
     margin: auto;
-    padding: 24px;
 
     @include break(tablet) {
-        padding: 40px;
     }
 
     @include break(laptop) {
-        padding: 48px;
     }
 
     @include break(desktop) {
-        padding: 56px;
     }
 }
