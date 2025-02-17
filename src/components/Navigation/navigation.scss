@@ -12,32 +12,26 @@
         right: 0;
         bottom: 0;
         left: 0;
-        padding: 80px 26px;
+        padding: 80px 18px;
         justify-content: end;
         align-items: end;
-        gap: 24px;
-
 
         @include break(tablet) {
             padding: 96px 42px;
-            gap: 32px;
         }
 
         @include break(laptop) {
             padding: 104px 50px;
-            gap: 40px;
         }
 
         @include break(desktop) {
             padding: 112px 56px;
-            gap: 40px;
         }
 
         a {
             color: c.$green;
             font-family: f.$primary-font;
             font-size: f.$navigation-text-mobile;
-            line-height: 0.8;
 
             @include break(tablet) {
                 font-size: f.$navigation-text-tablet;

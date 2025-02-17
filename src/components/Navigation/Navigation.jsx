@@ -1,5 +1,4 @@
 import './navigation.scss'
-import { useState } from 'react'
 import useNavigationStore from '../../store/navigationStore'
 import { Fade } from "react-awesome-reveal";
 

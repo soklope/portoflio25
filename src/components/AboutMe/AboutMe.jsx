@@ -8,7 +8,7 @@ export default function AboutMe() {
     return (
         showAboutMe && (
             <Fade duration={fadeDuration}>
-                <div className="page-container about-me">
+                <div className="about-me">
                     <h2 className='util-title'>About Me</h2>
                     <div className='about-me__meta'>
                         <p className='util-text'>

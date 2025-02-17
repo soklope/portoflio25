@@ -2,6 +2,8 @@
 @use '../../style/mixins/breakpoints' as *;
 
 .burger-menu {
+    margin-left: auto;
+    
     .hamburger-react {
         &:hover {
             div {

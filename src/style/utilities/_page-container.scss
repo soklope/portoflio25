@@ -1,7 +1,6 @@
 @use '../../style/mixins/breakpoints' as *;
 
 .page-container {
-    padding: 16px;
 
     @include break(tablet) {
     }

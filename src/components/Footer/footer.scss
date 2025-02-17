@@ -1,24 +1,71 @@
 @use '../../style/variables/colors' as c;
 @use '../../style/mixins/breakpoints' as *;
 
-footer {
+.footer {
     display: flex;
-    align-items: center;
+    align-items: end;
     bottom: 0;
     position: fixed;
     width: 100%;
-    padding: 0 16px;
+    padding: 0 8px 16px 16px;
     justify-content: space-between;
+    height: auto;
 
     @include break(tablet) {
-        padding: 0 40px;
+        padding: 0 32px 40px 40px;
     }
 
     @include break(laptop) {
-        padding: 0 48px;
+        padding: 0 40px 48px 48px;
+        align-items: center;        
     }
 
     @include break(desktop) {
-        padding: 0 56px;
+        padding: 0 48px 56px 56px;
+    }
+
+    &__socials {
+        display: flex;
+        gap: 24px;
+        margin-bottom: 14px;
+
+        @include break(tablet) {
+            gap: 32px;
+            margin-bottom: 16px;
+        }
+    
+        @include break(laptop) {
+            margin-bottom: 0;
+        }
+    
+        @include break(desktop) {
+        }
+    }
+
+    &__social-icon {
+        content: "";
+        display: block;
+        width: 24px;
+        height: 24px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &:hover {
+            cursor: pointer;
+            filter: brightness(0) invert(1);
+        }
+
+        &--linkedin {
+            background-image: url('../../assets/icons/linkedin.svg');
+        }
+
+        &--github {
+            background-image: url('../../assets/icons/github.svg');
+        }
+
+        &--mail {
+            background-image: url('../../assets/icons/mail.svg');
+        }
     }
 }
