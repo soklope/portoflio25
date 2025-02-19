@@ -7,17 +7,13 @@ export default function AboutMe() {
 
     return (
         showAboutMe && (
-            <Fade duration={fadeDuration}>
-                <div className="about-me">
-                    <h2 className='util-title'>About Me</h2>
-                    <div className='about-me__meta'>
-                        <p className='util-text'>
-                            I'm a passionate web developer specializing in modern, responsive, and user-friendly websites. 
-                            With experience in HTML, CSS, JavaScript, and frameworks like React and Next.js, I love turning ideas into functional and visually appealing digital experiences.
-                            With experience in HTML, CSS, JavaScript, and frameworks like React and Next.js, I love turning ideas into functional and visually appealing digital experiences.
-                            Let's build something amazing together!
-                        </p>
-
+            <div className="about-me">
+                <div className='about-me__meta'>
+                    <Fade duration={fadeDuration}>
+                        <h2 className='util-title'>About Me</h2>
+                        <p className='util-text'>I am a Danish web developer based in Odense, Denmark. With a background in retail spanning six years, I made the leap into the digital world in 2021 by pursuing multimedia studies. This led me to complete my PBA in Web Development in 2025.</p>
+                        <p className='util-text'>For the past two years, I have been working with modern frontend frameworks like React, crafting seamless and responsive web experiences. Beyond coding, I have a strong interest in UI and UX design, ensuring that the websites I build are not just functional but also intuitive and visually engaging.</p>
+                        <p className='util-text'>I am always excited to tackle new challenges and bring ideas to life through development and thoughtful design.</p>
                         <h3 className='util-sub-title'>Tech stack <span className='slash--white'>/</span> skills</h3>
                         <ul className='about-me__skill-list util-text'>
                             <li>React JS / TS</li>
@@ -39,9 +35,9 @@ export default function AboutMe() {
                             <li>Adobe Illustrator</li>
                             <li>Adobe InDesign</li>
                         </ul>
-                    </div>
+                    </Fade>     
                 </div>
-            </Fade>
+            </div>
         )
     )
 }

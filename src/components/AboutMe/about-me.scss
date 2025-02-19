@@ -5,19 +5,22 @@
 .about-me {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: calc(100dvh - 80px);
     padding: 16px 16px 120px 16px;
     overflow: auto;
 
     @include break(tablet) {
+        height: calc(100dvh - 104px);
         padding: 40px 40px 120px 40px;
     }
 
     @include break(laptop) {
+        height: calc(100dvh - 112px);
         padding: 48px 48px 120px 48px;
     }
 
     @include break(desktop) {
+        height: calc(100dvh - 120px);
         padding: 56px 56px 120px 56px;
     }
 

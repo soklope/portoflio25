@@ -1,4 +1,5 @@
 import './project-slide.scss'
+import { Fade } from 'react-awesome-reveal'
 
 export default function ProjectSlide({projectName, descriptionOne, descriptionTwo, linkUrl, websiteName}) {
     return (

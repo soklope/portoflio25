@@ -31,7 +31,6 @@ export default function MyProjects() {
                                 projectName={'visibuilt'}
                                 websiteName={'visibuilt.com'}
                                 linkUrl={'https://visibuilt.com/'}
-
                             />
                         </SwiperSlide>
 
@@ -42,7 +41,6 @@ export default function MyProjects() {
                                 projectName={'morgenfest'}
                                 websiteName={'morgenfest.dk'}
                                 linkUrl={'https://morgenfest.dk/'}
-
                             />
                         </SwiperSlide>
                     </Swiper>
