@@ -43,6 +43,7 @@
     }
 
     &__social-icon {
+        opacity: .5;
         content: "";
         display: block;
         width: 24px;
@@ -50,8 +51,11 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
+        transition: .2s;
 
         &:hover {
+            transition: .2s;
+            opacity: 1;
             cursor: pointer;
             filter: brightness(0) invert(1);
         }

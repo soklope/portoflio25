@@ -7,32 +7,91 @@
     display: flex;
     flex-direction: column;
     color: c.$white;
-    height: 100dvh;
+    height: calc(100dvh - 64px);
     justify-content: center;
-    padding: 16px 16px 120px 16px;
+    padding: 16px 16px 0 16px;
 
     @include break(tablet) {
-        padding: 40px 40px 120px 40px;
+        height: calc(100dvh - 88px);
+        padding: 40px 40px 0 40px;
     }
 
     @include break(laptop) {
-        padding: 48px 48px 120px 48px;
+        height: calc(100dvh - 96px);
+        padding: 48px 48px 0 48px;
     }
 
     @include break(desktop) {
-        padding: 56px 56px 120px 56px;
+        height: calc(100dvh - 104px);
+        padding: 56px 56px 0 56px;
     }
 
     &__meta {
         display: flex;
+        gap: 8px;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
         font-family: f.$secondary-font;
-        text-align: center;
         font-size: f.$contact-text-mobile;
         width: 100%;
-        margin: auto;
+        height: 100%;
+
+        @include break(tablet) {
+            font-size: f.$contact-text-tablet;
+        }
+
+        @include break(laptop) {
+            font-size: f.$contact-text-laptop;
+        }
+
+        @include break(desktop) {
+            font-size: f.$contact-text-desktop;
+        }
+
+        &::before {
+            content: '';
+            opacity: .5;
+            display: block;
+            height: 100%;
+            width: 1px;
+            background-color: c.$white;
+            margin: 24px 0 24px 5px;
+            transition: .2s;
+        }
+
+        &::after {
+            content: '';
+            opacity: .5;
+            display: block;
+            height: 100%;
+            width: 1px;
+            background-color: c.$white;
+            margin: 24px 0 24px 5px;
+        }
+
+        &:hover {
+            transition: .2s;
+
+            &::after {
+                content: '';
+                opacity: 1;
+                display: block;
+                height: 100%;
+                width: 1px;
+                background-color: c.$green;
+                margin: 24px 0 24px 5px;
+            }   
+
+            &::before {
+                content: '';
+                opacity: 1;
+                display: block;
+                height: 100%;
+                width: 1px;
+                background-color: c.$green;
+                margin: 24px 0 24px 5px;
+            }  
+        }
 
         &--name {
             font-weight: lighter;
