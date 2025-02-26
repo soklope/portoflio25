@@ -1,7 +1,7 @@
-import './pageTitle.scss'
+import './animatedTitle.scss'
 import { useEffect, useState } from 'react';
 
-export default function PageTitle({titleValue, delay}) {
+export default function AnimatedTitle({titleValue, delay}) {
     const [nameString] = useState(titleValue)
     const [animatedNameString, setAnimatedNameString] = useState('')
     const [animationComplete, setAnimationComplete] = useState(false)

@@ -1,7 +1,7 @@
 import './contact.scss'
 import useNavigationStore from '../../store/navigationStore';
 import { Fade } from 'react-awesome-reveal';
-import PageTitle from '../PageTitle/PageTitle';
+import AnimatedTitle from '../AnimatedTitle/AnimatedTitle';
 
 export default function Contact() {
     const { showContact, fadeDuration } = useNavigationStore();
@@ -16,7 +16,7 @@ export default function Contact() {
         showContact && (
             <Fade duration={fadeDuration} cascade={true} damping={.5}>
                 <div className="page-container contact">
-                    <PageTitle 
+                    <AnimatedTitle 
                         titleValue={'Contact'}
                         delay={500}
                     />

@@ -29,57 +29,61 @@ export default function Greeting() {
     }, [clickGreeting]);
 
     useEffect(() => {
-      let timeouts = [];
+        let timeouts = [];
+        const greetingTimeout = setTimeout(() => {
+          greetingString.split('').forEach((letter, i) => {
+            const timeout = setTimeout(() => {
+              setAnimatedGreeting(prev => prev + letter);
       
-      greetingString.split('').forEach((letter, i) => {
-          const timeout = setTimeout(() => {
-            setAnimatedGreeting(prev => prev + letter);
-            
-            if (i === greetingString.split('').length - 1) {
-                setAnimatedGreetingComplete(true)
-            }
-          }, i * 100);
-          timeouts.push(timeout);
-      });
-
-      const nameDelay = greetingString.length * 100 + 100;
-      const nameTimeout = setTimeout(() => {
+              if (i === greetingString.length - 1) {
+                setAnimatedGreetingComplete(true);
+              }
+            }, i * 20);
+            timeouts.push(timeout);
+          });
+        }, 1000);
+      
+        timeouts.push(greetingTimeout);
+      
+        const nameDelay = 1000 + greetingString.length * 100 + 100;
+        const nameTimeout = setTimeout(() => {
           nameString.split('').forEach((letter, i) => {
-              const timeout = setTimeout(() => {
-                  setAnimatedNameString(prev => prev + letter);
-                 
-                if (i === nameString.split('').length - 1) {
-                    setAnimatedNameStringComplete(true)
-                }
-              }, i * 20);
-              timeouts.push(timeout);
+            const timeout = setTimeout(() => {
+              setAnimatedNameString(prev => prev + letter);
+      
+              if (i === nameString.length - 1) {
+                setAnimatedNameStringComplete(true);
+              }
+            }, i * 20);
+            timeouts.push(timeout);
           });
-      }, nameDelay);
-      timeouts.push(nameTimeout);
-
-      const roleDelay = nameDelay + nameString.length * 20 + 100;
-      const roleTimeout = setTimeout(() => {
+        }, nameDelay);
+        timeouts.push(nameTimeout);
+      
+        const roleDelay = nameDelay + nameString.length * 20 + 100;
+        const roleTimeout = setTimeout(() => {
           roleString.split('').forEach((letter, i) => {
-              const timeout = setTimeout(() => {
-                  setAnimatedRoleString(prev => prev + letter);
-
-                  if (i === roleString.split('').length - 1) {
-                    setAnimatedRoleStringComplete(true)
-                }
-              }, i * 20);
-              timeouts.push(timeout);
+            const timeout = setTimeout(() => {
+              setAnimatedRoleString(prev => prev + letter);
+      
+              if (i === roleString.length - 1) {
+                setAnimatedRoleStringComplete(true);
+              }
+            }, i * 20);
+            timeouts.push(timeout);
           });
-      }, roleDelay);
-      timeouts.push(roleTimeout);
-
-      return () => {
+        }, roleDelay);
+        timeouts.push(roleTimeout);
+      
+        return () => {
           timeouts.forEach(clearTimeout);
-      };
-  }, [greetingString, nameString, roleString]);
+        };
+      }, [greetingString, nameString, roleString]);
+      
 
     return (
         <div className="greeting-container">
-          <h2 className={`${!animatedGreetingComplete && 'title-cursor'}`}>{animatedGreeting}</h2>
+          <h2 className={`util-title ${!animatedGreetingComplete && 'title-cursor'}`}>{animatedGreeting}</h2>
           <p className={`${!animatedNameStringComplete && 'text-cursor'}`}>{animatedNameString}</p>
           <p className={`${!animatedRoleStringComplete && 'text-cursor'}`}>{animatedRoleString}</p>
           {

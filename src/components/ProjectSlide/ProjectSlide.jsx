@@ -1,10 +1,10 @@
 import './project-slide.scss'
-import PageTitle from '../PageTitle/PageTitle'
+import AnimatedTitle from '../AnimatedTitle/AnimatedTitle'
 
 export default function ProjectSlide({projectName, descriptionOne, descriptionTwo, linkUrl, websiteName}) {
     return (
         <div className={`project-slide project-slide--${projectName}`}>
-            <PageTitle 
+            <AnimatedTitle 
                 titleValue={projectName}
                 delay={500}
             />

@@ -1,7 +1,7 @@
 import './about-me.scss'
 import useNavigationStore from '../../store/navigationStore';
 import { Fade } from 'react-awesome-reveal';
-import PageTitle from '../PageTitle/PageTitle';
+import AnimatedTitle from '../AnimatedTitle/AnimatedTitle';
 
 export default function AboutMe() {
     const { showAboutMe, fadeDuration } = useNavigationStore();
@@ -11,7 +11,7 @@ export default function AboutMe() {
             <div className="about-me">
                 <div className='about-me__meta'>
                     <Fade duration={fadeDuration}>
-                        <PageTitle 
+                        <AnimatedTitle 
                             titleValue={'About Me'}
                             delay={500}
                         />
