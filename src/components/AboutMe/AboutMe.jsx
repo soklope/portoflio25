@@ -21,6 +21,8 @@ export default function AboutMe() {
                         <h3 className='util-sub-title'>Tech stack <span className='slash--white'>/</span> skills</h3>
                         <ul className='about-me__skill-list util-text'>
                             <li>React JS / TS</li>
+                            <li>Angular</li>
+                            <li>Vue</li>
                             <li>NODE JS</li>
                             <li>CSS / SCSS</li>
                             <li>PHP</li>
