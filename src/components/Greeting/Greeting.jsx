@@ -1,30 +1,92 @@
 import './greeting.scss'
 import useToggleStore from '../../store/navigationStore';
-import { Fade } from 'react-awesome-reveal';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export default function Greeting() {
-    const { clickGreeting, fadeDuration } = useToggleStore();
+    const { clickGreeting } = useToggleStore();
+
+    const [greetingString] = useState('Hello')
+    const [nameString] = useState('My name is Søren Kloster Pedersen')
+    const [roleString] = useState('and I am a Webdeveloper')
+
+    const [animatedGreeting, setAnimatedGreeting] = useState('')
+    const [animatedNameString, setAnimatedNameString] = useState('')
+    const [animatedRoleString, setAnimatedRoleString] = useState('')
+
+    const [animatedGreetingComplete, setAnimatedGreetingComplete] = useState(false)
+    const [animatedNameStringComplete, setAnimatedNameStringComplete] = useState(false)
+    const [animatedRoleStringComplete, setAnimatedRoleStringComplete] = useState(false)
+    
+    useEffect(() => {
+      const handleKeyPress = (event) => {
+        if (event.key === "Enter") {
+          clickGreeting();
+        }
+      };
+  
+      window.addEventListener("keydown", handleKeyPress);
+      return () => window.removeEventListener("keydown", handleKeyPress);
+    }, [clickGreeting]);
 
     useEffect(() => {
-        const handleKeyPress = (event) => {
-          if (event.key === "Enter") {
-            clickGreeting();
-          }
-        };
-    
-        window.addEventListener("keydown", handleKeyPress);
-        return () => window.removeEventListener("keydown", handleKeyPress);
-      }, [clickGreeting]);
+      let timeouts = [];
+      
+      greetingString.split('').forEach((letter, i) => {
+          const timeout = setTimeout(() => {
+            setAnimatedGreeting(prev => prev + letter);
+            
+            if (i === greetingString.split('').length - 1) {
+                setAnimatedGreetingComplete(true)
+            }
+          }, i * 100);
+          timeouts.push(timeout);
+      });
+
+      const nameDelay = greetingString.length * 100 + 100;
+      const nameTimeout = setTimeout(() => {
+          nameString.split('').forEach((letter, i) => {
+              const timeout = setTimeout(() => {
+                  setAnimatedNameString(prev => prev + letter);
+                 
+                if (i === nameString.split('').length - 1) {
+                    setAnimatedNameStringComplete(true)
+                }
+              }, i * 20);
+              timeouts.push(timeout);
+          });
+      }, nameDelay);
+      timeouts.push(nameTimeout);
+
+      const roleDelay = nameDelay + nameString.length * 20 + 100;
+      const roleTimeout = setTimeout(() => {
+          roleString.split('').forEach((letter, i) => {
+              const timeout = setTimeout(() => {
+                  setAnimatedRoleString(prev => prev + letter);
+
+                  if (i === roleString.split('').length - 1) {
+                    setAnimatedRoleStringComplete(true)
+                }
+              }, i * 20);
+              timeouts.push(timeout);
+          });
+      }, roleDelay);
+      timeouts.push(roleTimeout);
+
+      return () => {
+          timeouts.forEach(clearTimeout);
+      };
+  }, [greetingString, nameString, roleString]);
 
     return (
         <div className="greeting-container">
-            <Fade duration={fadeDuration} cascade={true} damping={1}>
-                <h2>Hello</h2>
-                <p>My name is <b>Søren Kloster Pedersen</b></p>
-                <p>and I am a <b>Webdeveloper</b></p>
+          <h2 className={`${!animatedGreetingComplete && 'title-cursor'}`}>{animatedGreeting}</h2>
+          <p className={`${!animatedNameStringComplete && 'text-cursor'}`}>{animatedNameString}</p>
+          <p className={`${!animatedRoleStringComplete && 'text-cursor'}`}>{animatedRoleString}</p>
+          {
+            animatedRoleStringComplete && (
                 <button onClick={clickGreeting}>Enter</button>
-            </Fade>
+            )
+          }
         </div>
     )
 }

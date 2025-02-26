@@ -1,10 +1,13 @@
 import './project-slide.scss'
-import { Fade } from 'react-awesome-reveal'
+import PageTitle from '../PageTitle/PageTitle'
 
 export default function ProjectSlide({projectName, descriptionOne, descriptionTwo, linkUrl, websiteName}) {
     return (
         <div className={`project-slide project-slide--${projectName}`}>
-            <h2 className='util-title'>{projectName}</h2>
+            <PageTitle 
+                titleValue={projectName}
+                delay={500}
+            />
             <span className={`project-slide__logo project-slide__logo--${projectName}`}></span>
             <div className='project-slide__description'>{descriptionOne}</div>
             { descriptionTwo && (

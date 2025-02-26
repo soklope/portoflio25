@@ -1,6 +1,7 @@
 import './about-me.scss'
 import useNavigationStore from '../../store/navigationStore';
 import { Fade } from 'react-awesome-reveal';
+import PageTitle from '../PageTitle/PageTitle';
 
 export default function AboutMe() {
     const { showAboutMe, fadeDuration } = useNavigationStore();
@@ -10,7 +11,10 @@ export default function AboutMe() {
             <div className="about-me">
                 <div className='about-me__meta'>
                     <Fade duration={fadeDuration}>
-                        <h2 className='util-title'>About Me</h2>
+                        <PageTitle 
+                            titleValue={'About Me'}
+                            delay={500}
+                        />
                         <p className='util-text'>I am a Danish web developer based in Odense, Denmark. With a background in retail spanning six years, I made the leap into the digital world in 2021 by pursuing multimedia studies. This led me to complete my PBA in Web Development in 2025.</p>
                         <p className='util-text'>For the past two years, I have been working with modern frontend frameworks like React, crafting seamless and responsive web experiences. Beyond coding, I have a strong interest in UI and UX design, ensuring that the websites I build are not just functional but also intuitive and visually engaging.</p>
                         <p className='util-text'>I am always excited to tackle new challenges and bring ideas to life through development and thoughtful design.</p>

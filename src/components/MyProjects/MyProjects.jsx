@@ -4,6 +4,7 @@ import { Navigation, Pagination, Scrollbar, A11y } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import ProjectSlide from '../ProjectSlide/ProjectSlide';
 import { Fade } from 'react-awesome-reveal';
+import { useState, useEffect } from 'react';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
@@ -12,7 +13,26 @@ import 'swiper/css/pagination';
 
 export default function MyProjects() {
     const { showProjects, fadeDuration } = useNavigationStore();
+    const [swiperInstance, setSwiperInstance] = useState(null);
 
+    useEffect(() => {
+        if (!swiperInstance) return;
+
+        const handleWheel = (event) => {
+            if (event.deltaY > 0) {
+                swiperInstance.slideNext();
+            } else {
+                swiperInstance.slidePrev();
+            }
+        };
+
+        window.addEventListener('wheel', handleWheel);
+
+        return () => {
+            window.removeEventListener('wheel', handleWheel);
+        };
+    }, [swiperInstance]);
+    
     return (
         showProjects && (
             <Fade duration={fadeDuration}>
@@ -23,6 +43,7 @@ export default function MyProjects() {
                         slidesPerView={1}
                         navigation
                         scrollbar={{ draggable: true }}
+                        onSwiper={setSwiperInstance}
                         >
                         <SwiperSlide>
                             <ProjectSlide 
