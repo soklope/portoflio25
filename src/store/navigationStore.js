@@ -9,8 +9,8 @@ const useNavigationStore = create((set) => ({
   isMenuOpen: false,
   toggleMenu: () => set((state) => ({ isMenuOpen: !state.isMenuOpen })),
 
-  showAboutMe: true,
-  showProjects: false,
+  showProjects: true,
+  showAboutMe: false,
   showContact: false,
 
   setActiveSection: (section) =>

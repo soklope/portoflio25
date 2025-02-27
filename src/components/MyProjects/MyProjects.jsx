@@ -44,6 +44,7 @@ export default function MyProjects() {
                         navigation
                         scrollbar={{ draggable: true }}
                         onSwiper={setSwiperInstance}
+                        loop={true}
                         >
                         <SwiperSlide>
                             <ProjectSlide 

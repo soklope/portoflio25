@@ -7,15 +7,18 @@ export default function Greeting() {
 
     const [greetingString] = useState('Hello')
     const [nameString] = useState('My name is Søren Kloster Pedersen')
-    const [roleString] = useState('and I am a Webdeveloper')
+    const [roleString] = useState('I am a Webdeveloper')
+    const [portfolioString] = useState('...and this is my Portfolio')
 
     const [animatedGreeting, setAnimatedGreeting] = useState('')
     const [animatedNameString, setAnimatedNameString] = useState('')
     const [animatedRoleString, setAnimatedRoleString] = useState('')
+    const [animatedPortfolioString, setAnimatedPortfolioString] = useState('')
 
     const [animatedGreetingComplete, setAnimatedGreetingComplete] = useState(false)
     const [animatedNameStringComplete, setAnimatedNameStringComplete] = useState(false)
     const [animatedRoleStringComplete, setAnimatedRoleStringComplete] = useState(false)
+    const [animatedPortfolioStringComplete, setAnimatedPortfolioStringComplete] = useState(false)
     
     useEffect(() => {
       const handleKeyPress = (event) => {
@@ -41,11 +44,11 @@ export default function Greeting() {
             }, i * 20);
             timeouts.push(timeout);
           });
-        }, 1000);
+        }, 1500);
       
         timeouts.push(greetingTimeout);
       
-        const nameDelay = 1000 + greetingString.length * 100 + 100;
+        const nameDelay = 2000 + greetingString.length * 100 + 100;
         const nameTimeout = setTimeout(() => {
           nameString.split('').forEach((letter, i) => {
             const timeout = setTimeout(() => {
@@ -74,20 +77,36 @@ export default function Greeting() {
           });
         }, roleDelay);
         timeouts.push(roleTimeout);
+
+        const portfolioDelay = 500 + roleDelay + nameString.length * 20 + 100;
+        const portfolioTimeout = setTimeout(() => {
+          portfolioString.split('').forEach((letter, i) => {
+            const timeout = setTimeout(() => {
+              setAnimatedPortfolioString(prev => prev + letter);
+      
+              if (i === portfolioString.length - 1) {
+                setAnimatedPortfolioStringComplete(true);
+              }
+            }, i * 20);
+            timeouts.push(timeout);
+          });
+        }, portfolioDelay);
+        timeouts.push(portfolioTimeout);
       
         return () => {
           timeouts.forEach(clearTimeout);
         };
-      }, [greetingString, nameString, roleString]);
+      }, [greetingString, nameString, roleString, portfolioString]);
       
 
     return (
         <div className="greeting-container">
           <h2 className={`util-title ${!animatedGreetingComplete && 'title-cursor'}`}>{animatedGreeting}</h2>
-          <p className={`${!animatedNameStringComplete && 'text-cursor'}`}>{animatedNameString}</p>
-          <p className={`${!animatedRoleStringComplete && 'text-cursor'}`}>{animatedRoleString}</p>
+          <p className={`${animatedGreetingComplete && !animatedNameStringComplete ? 'text-cursor' : ''}`}>{animatedNameString}</p>
+          <p className={`${animatedNameStringComplete && !animatedRoleStringComplete ? 'text-cursor' : ''}`}>{animatedRoleString}</p>
+          <p className={`${animatedRoleStringComplete && !animatedPortfolioStringComplete ? 'text-cursor' : ''}`}>{animatedPortfolioString}</p>
           {
-            animatedRoleStringComplete && (
+            animatedPortfolioStringComplete && (
                 <button onClick={clickGreeting}>Enter</button>
             )
           }

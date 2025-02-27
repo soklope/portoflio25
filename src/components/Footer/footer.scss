@@ -51,10 +51,8 @@
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
-        transition: .2s;
 
         &:hover {
-            transition: .2s;
             opacity: 1;
             cursor: pointer;
             filter: brightness(0) invert(1);
