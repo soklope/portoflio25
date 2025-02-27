@@ -57,6 +57,7 @@
         color: c.$green;
         text-transform: uppercase;
         position: relative;
+        font-size: 20px;
 
         &::after {
             content: "";
@@ -65,7 +66,7 @@
             height: 1px;
             background-color: c.$white;
             position: absolute;
-            right: 64px;
+            right: 80px;
             bottom: 50%;
             transition: .2s;
         }
@@ -78,7 +79,7 @@
             background-color: c.$white;
             position: absolute;
             bottom: 50%;
-            left: 64px;
+            left: 80px;
             transition: .2s;
         }
 
