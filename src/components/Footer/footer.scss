@@ -54,8 +54,8 @@
 
         &:hover {
             opacity: 1;
-            cursor: pointer;
             filter: brightness(0) invert(1);
+            cursor: none;
         }
 
         &--linkedin {

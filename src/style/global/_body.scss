@@ -1,6 +1,7 @@
 @use './../variables/colors.scss' as c;
 
 body {
+    cursor: none; // remove during development
     position: relative;
     color: c.$white;
     background: c.$body-gradient;

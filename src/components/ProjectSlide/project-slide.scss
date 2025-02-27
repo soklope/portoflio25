@@ -89,6 +89,7 @@
 
         &:hover {
             color: c.$green;
+            cursor: none;
         }
 
         @include break(tablet) {

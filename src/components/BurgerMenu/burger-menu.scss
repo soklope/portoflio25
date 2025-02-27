@@ -6,10 +6,17 @@
     
     .hamburger-react {
         &:hover {
+            
             div {
                 transition: 0s !important;
                 background-color: c.$white !important;
             }
         }
+    }
+}
+
+.hamburger-react {
+    &:hover {
+        cursor: none !important;
     }
 }

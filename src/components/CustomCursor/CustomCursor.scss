@@ -1,0 +1,20 @@
+@use '../../style/variables/colors' as c;
+@use '../../style/variables/fonts' as f;
+@use '../../style/mixins/breakpoints' as *;
+
+.custom-cursor {
+    display: none;
+    
+    @include break(laptop) {
+        display: block;
+        position: absolute;
+        top: -25px;
+        left: -25px;
+        border: solid 2px c.$white;
+        border-radius: 50%;
+        height: 50px;
+        width: 50px;
+        z-index: 1;
+        pointer-events: none;
+    }
+}

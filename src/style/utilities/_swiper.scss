@@ -36,6 +36,11 @@
         font-size: 20px !important;
     }
 
+    &:hover {
+        color: c.$green !important;
+        cursor: none !important;
+    }
+
     @include break(tablet) {
         top: 52px !important;
         right: 96px !important;
@@ -72,6 +77,11 @@
     &::after {
         font-family: f.$primary-font !important;
         font-size: 20px !important;
+    }
+
+    &:hover {
+        color: c.$green !important;
+        cursor: none !important;
     }
 
     @include break(tablet) {

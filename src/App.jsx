@@ -6,12 +6,14 @@ import AboutMe from './components/AboutMe/AboutMe';
 import Navigation from './components/Navigation/Navigation';
 import Footer from './components/Footer/Footer';
 import useNavigationStore from './store/navigationStore'
+import CustomCursor from './components/CustomCursor/CustomCursor';
 
 export default function App() {
   const { hasClickedOnGreeting, isMenuOpen } = useNavigationStore();
 
   return (
     <>
+      <CustomCursor />
       { hasClickedOnGreeting ? 
         <>
           {
