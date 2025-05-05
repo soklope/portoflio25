@@ -97,6 +97,15 @@
             font-weight: lighter;
         }
 
+        &--tel {
+            color: c.$white;
+            font-weight: lighter;
+
+            &:hover {
+                cursor: none;
+            }
+        }
+
         &--mail {
             width: fit-content;
             font-weight: bold;

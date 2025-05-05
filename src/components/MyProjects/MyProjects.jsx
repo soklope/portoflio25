@@ -50,6 +50,16 @@ export default function MyProjects() {
                             <ProjectSlide 
                                 descriptionOne={'Visibuilt is a biotech startup based in Copenhagen, Denmark, focused on developing a sustainable alternative to bitumen for asphalt production.'}
                                 descriptionTwo={'To support their mission, I designed and built a fully custom React website, seamlessly integrated with Firebase Hosting and Firestore. This setup ensures a dynamic and scalable platform, with a dedicated news article page that allows for easy content management and real-time updates.'}
+                                projectName={'csloadout'}
+                                websiteName={'csloadout.online'}
+                                linkUrl={'https://csloadout.online/'}
+                            />
+                        </SwiperSlide>
+
+                        <SwiperSlide>
+                            <ProjectSlide 
+                                descriptionOne={'Visibuilt is a biotech startup based in Copenhagen, Denmark, focused on developing a sustainable alternative to bitumen for asphalt production.'}
+                                descriptionTwo={'To support their mission, I designed and built a fully custom React website, seamlessly integrated with Firebase Hosting and Firestore. This setup ensures a dynamic and scalable platform, with a dedicated news article page that allows for easy content management and real-time updates.'}
                                 projectName={'visibuilt'}
                                 websiteName={'visibuilt.com'}
                                 linkUrl={'https://visibuilt.com/'}

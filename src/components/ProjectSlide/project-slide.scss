@@ -55,6 +55,10 @@
         background-image: url('../../assets/images/vb.jpg');
     }
 
+    &--csloadout::before {
+        background-image: url('../../assets/images/cl.jpg');
+    }
+
     &--morgenfest::before {
         background-image: url('../../assets/images/mf.jpg');
     }
